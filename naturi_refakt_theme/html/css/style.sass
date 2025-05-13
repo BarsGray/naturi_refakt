@@ -1,0 +1,3554 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700)
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+=flex($jc, $ai, $gap)
+    display: flex
+    justify-content: $jc
+    align-items: $ai
+    gap: $gap
+
+img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    display: block
+
+body
+    line-height: 1
+    font-size: 16px
+    font-family: HelveticaNeueCyr-Regular, Arial, sans-serif
+    font-weight: 400
+    overflow-x: hidden
+
+ul
+    list-style-type: none
+
+a
+    text-decoration: none
+    color: transparent
+    display: block
+    &:hover
+        cursor: pointer
+
+input, button, select, textarea
+    outline: none
+
+section
+    margin: 50px 0
+    padding: 50px 0
+
+.bg_light_grey
+    background: #f6f6f6
+
+h2
+    font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+    font-size: 45px
+    line-height: 1.2
+    font-weight: 100
+    color: #000
+    text-transform: none
+
+.btn, .wpcf7-submit
+    line-height: 48px
+    font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+    font-size: 10px
+    font-weight: 500
+    color: #fff
+    text-transform: uppercase
+    background: #ff8156
+    letter-spacing: 2px
+    text-align: center
+    border: 1px solid #ff8156
+    transition: all .5s ease
+    padding: 0px 45px
+    &:hover
+        background: transparent
+        color: #ff8156
+        cursor: pointer
+
+.play_btn
+    position: absolute
+    width: 70px
+    height: 70px
+    z-index: 2
+    left: 0
+    right: 0
+    top: 4px
+    bottom: 0
+    margin: auto
+    background: #ff815c
+    border-color: #ff815c
+    border-radius: 50px
+    text-align: center
+    line-height: 70px
+    font-size: 36px
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: .2s
+    &:before, &:after
+        content: ""
+        border: 1px solid
+        width: 150%
+        height: 150%
+        border-color: #ff815c
+        border-radius: 50px
+        position: absolute
+        left: -25%
+        top: -25%
+        opacity: 1
+        animation: 1s videomodule-anim linear infinite
+    &:before
+        animation-delay: .5s !important
+    img
+        width: 8px
+        height: 10px
+@keyframes videomodule-anim
+    0%
+        -webkit-transform: scale(0.68)
+        transform: scale(0.68)
+    100%
+        -webkit-transform: scale(1.2)
+        transform: scale(1.2)
+        opacity: 0
+
+.first_screen
+    background: #303030
+    padding: 50px 0
+    margin: 0
+    background-repeat: no-repeat
+    background-size: cover
+    position: relative
+    background-position: center
+
+.container
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    height: max-content
+
+.swiper
+    width: 100%
+    height: 100%
+
+    &-slide
+        text-align: center
+        font-size: 18px
+        //background: #fff
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+            display: block
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+.shadow
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: #000
+    opacity: .6
+    z-index: 1
+
+.header
+    background: #0d0d0d
+    top: 0
+    position: relative
+    z-index: 99
+    width: 100%
+    transition: all 0.3s
+    left: 0
+    top: 0
+    padding: 15px 0
+    height: 153px
+    &_logo
+        min-width: max-content
+    &.js_fixed
+        position: fixed
+        background: rgba(60, 0, 23, 0.95)
+        background: #0d0d0d
+        z-index: 99999
+        left: 0
+        top: 0
+        transition: all 0.3s
+
+    &_inner
+        +flex(space-between, center, 25px)
+        flex-wrap: wrap
+        &_top
+            width: 100%
+            +flex(space-between, center, 25px)
+        &_bottom
+            width: 100%
+            .menu-header_menu-container
+                +flex(center, center, 25px)
+        & ul
+            display: flex
+            gap: 15px
+
+        & a
+            color: #fff
+
+        &_right
+            display: flex
+            justify-content: space-between
+            align-items: center
+            gap: 25px
+            &_icon
+                position: relative
+                img
+                    max-width: 25px
+                &_amount
+                    position: absolute
+                    top: -7px
+                    right: -8px
+                    font-size: 10px
+
+    .hamburger_menu
+        display: block
+        z-index: 99
+        width: 30px
+        height: 20px
+        &::before
+            content: ""
+            display: block
+            height: 3px
+            width: 30px
+            border-radius: 3px
+            background: #fff
+            transition: all 0.3s
+
+        &::after
+            content: ""
+            display: block
+            height: 3px
+            width: 30px
+            border-radius: 3px
+            background: #fff
+            transition: all 0.3s
+
+        & span
+            height: 3px
+            width: 25px
+            background: #fff
+            display: block
+            border-radius: 3px
+            margin: 5px 0px
+            transition: all 0.3s
+
+        &.active::before
+            transform: rotate(45deg)
+            transition: all 0.3s
+            top: 30px
+            position: absolute
+
+        &.active::after
+            transform: rotate(-45deg)
+            transition: all 0.3s
+            position: absolute
+            top: 30px
+
+        &.active span
+            display: none
+        &.active .overlay
+            opacity: 1
+
+    &_menu_detail
+        background: #161616
+        padding: 34px 0
+        display: none
+        max-height: 100vh
+        overflow-y: auto
+        color: #fff
+        &_items
+            +flex(space-between, flex-start, 0)
+            flex-wrap: wrap
+        &_item
+            width: 100%
+            max-width: 25%
+            padding: 0 25px
+            h2
+                font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                font-size: 24px
+                color: #acacac
+                margin-bottom: 15px
+            a
+                padding: 5px 0
+                font-size: 14px
+                line-height: 18px
+                color: #fff
+                transition: all .5s ease
+            &_contacts
+                &_title
+                    font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                    font-size: 10px
+                    line-height: 36px
+                    letter-spacing: 2px
+                    color: #acacac
+                    text-transform: uppercase
+                &_phone
+                    transition: all .5s ease
+                    margin-bottom: 46px
+                &_callback
+                    display: block
+                    width: 100%
+                    line-height: 50px !important
+                    background: transparent
+                    border: 1px solid #ff815c
+                    font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                    font-size: 10px !important
+                    letter-spacing: 2px
+                    color: #fff
+                    text-transform: uppercase
+                    text-align: center
+                    transition: all .5s ease
+                    margin-bottom: 47px
+                &_social
+                    +flex(space-between, flex-start, 10px)
+                    flex-wrap: wrap
+                    &_title
+                        width: 100%
+                        margin-bottom: 25px
+                    a
+                        width: 32px
+                        height: 31px
+                        opacity: .33
+                        transition: all .3s ease
+                        padding: 0
+                        &:hover
+                            opacity: 1
+                        img
+                            object-fit: contain
+                &_text, &_phone
+                    font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                    font-size: 24px
+                    line-height: 30px
+                    color: #fff
+                    margin-bottom: 26px
+    nav
+        ul
+            margin: 0
+            padding: 0
+            list-style: none
+            &:after
+                content: ""
+                display: table
+                clear: both
+        a
+            text-decoration: none
+            display: block
+            transition: .3s linear
+            color: #666666
+
+    .topmenu > li
+        float: left
+        position: relative
+        //border-left: 1px solid black
+        &:first-child
+            border-left: 0
+        & > a
+            padding: 20px
+            font-size: 12px
+            //text-transform: uppercase
+            letter-spacing: 2px
+            color: #666666
+            font-weight: 900
+
+    .topmenu > li > a.active,
+    .sub-menu a:hover
+        color: #fff
+        background-color: #ff8156
+    .topmenu .fa,
+    .sub-menu .fa
+        margin-left: 5px
+        color: inherit
+
+    .sub-menu
+        position: absolute
+        z-index: 5
+        min-width: 200px
+        background: #0d0d0d
+        visibility: hidden
+        opacity: 0
+        transform-origin: 0% 0%
+        transform: rotateX(-90deg)
+        transition: .3s linear
+        width: min-content
+        padding: 10px
+        flex-wrap: wrap
+        gap: 10px 0
+        li
+            position: relative
+            width: 46%
+            a
+                color: #aaa
+                padding: 10px 20px
+                font-size: 13px
+                border-bottom: 1px solid #f37854
+            &:hover
+                a
+                    color: #fff
+
+        /*& &
+         position: absolute
+         left: 100%
+         top: -1px
+         transition: .3s linear
+    .menu-item-817
+        .sub-menu
+            min-width: 500px
+            gap: 15px
+    .menu-item-831
+        li
+            width: 100%
+
+    nav li:hover > .sub-menu 
+            transform: rotateX(0deg)
+            visibility: visible
+            opacity: 1
+    &_right
+        +flex(space-between, center, 5px)
+        flex-wrap: wrap
+        a
+            width: 100%
+            color: #fff
+            font-size: 18px
+            text-align: end
+        a:nth-child(2)
+            color: #ffcc00
+            font-size: 12px
+
+.open
+    display: block
+
+.overlay
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -1
+    visibility: hidden
+    opacity: 0
+    transition: all 0.3s
+    background: rgb(0, 0, 0, 0.7)
+    backdrop-filter: blur(8px)
+    height: 100VH
+
+.menu-active
+    .overlay
+        opacity: 1
+        visibility: visible
+
+a.header__phone
+    color: #ff8156
+    font-size: 14px
+    transition: all 0.3s ease
+    &:hover
+        color: #fff
+
+.home_page
+    .first_screen
+        padding: 220px 0
+
+.first_screen
+    .container
+        +flex(center, center, 0)
+        font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+        color: #fff
+        position: relative
+        z-index: 1
+    &_content
+        h1
+            font-weight: 600
+            font-size: 52px
+            margin-bottom: 20px
+            line-height: 130%
+        h2
+            font-weight: 100
+            font-size: 28px
+            margin-bottom: 43px
+            color: #fff
+        &_order
+            +flex(space-between, center, 25px)
+            .btn
+                line-height: 59px
+            &_video
+                display: block
+                max-width: 130px
+                width: 100%
+                position: relative
+                &_play
+                    position: absolute
+                    width: 70px
+                    height: 70px
+                    z-index: 2
+                    left: 0
+                    right: 0
+                    top: 4px
+                    bottom: 0
+                    margin: auto
+                    background-color: #ff815c
+                    border-color: #ff815c
+                    border-radius: 50px
+                    text-align: center
+                    line-height: 70px
+                    font-size: 36px
+                    cursor: pointer
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    transition: .2s
+                    svg
+                        width: 17px
+                        margin-left: 4px
+                    &:hover
+                        width: 80px
+                        height: 80px
+.advantages
+    &_items
+        +flex(space-between, center, 25px)
+    .advantages_item
+        width: 31%
+        &_img
+            max-width: 44px
+            margin: 0 auto
+
+        h3
+            font-family: HelveticaNeueCyr-Medium
+            font-weight: 500
+            margin: 23px 0
+            text-align: center
+            font-size: 16px
+        p
+            text-align: center
+
+.technology_differences
+    &_inner
+        +flex(space-between, center, 25px)
+        &_left
+            width: 50%
+            max-width: 495px
+        &_right
+            width: 50%
+            max-width: 570px
+            p
+
+                font-size: 24px
+                line-height: 30px
+                color: #f37854
+                margin-bottom: 35px
+            ul
+                li
+                    padding-left: 42px
+                    line-height: 26px
+                    position: relative
+                    margin-bottom: 30px
+                    &::before
+                        position: absolute
+                        content: ""
+                        left: 0
+                        top: 0
+                        background: url("/wp-content/themes/mars-web.ru/assets/img/technology-differences-list.png") no-repeat
+                        width: 28px
+                        height: 24px
+                    p
+                        font-size: 16px
+                        line-height: 26px
+                        color: #000
+                        margin-bottom: 30px
+
+.popular_projects
+    .house_design
+        text-transform: uppercase
+        display: block
+        max-width: fit-content
+        margin: 0 auto
+        margin-top: 25px
+        padding: 0 50px
+
+.catalog
+    &_items
+        display: flex
+        gap: 25px
+        margin-top: 40px
+        flex-wrap: wrap
+    &_item
+        transition: all .5s
+        font-family: HelveticaNeueCyr-Bold, Arial, sans-serif
+        font-weight: 700
+        border: 1px solid #f0f0f0
+        padding-bottom: 20px
+        width: 31%
+        &_img
+            transition: all .5s
+            position: relative
+            overflow: hidden
+            height: 237px
+            img
+                transition: all .5s
+                height: 100%
+            &:before
+                content: ""
+                position: absolute
+                width: 100%
+                height: 100%
+                background: rgba(0, 0, 0, .4)
+                opacity: 0
+                z-index: 2
+                transition: all .5s
+        &:hover .catalog_item_img:before
+            opacity: 1
+            transition: all .5s
+        &:hover .catalog_item_img
+            img
+                transform: scale(1.1)
+                transition: all .5s
+
+        &_photo_info
+            position: absolute
+            bottom: 16px
+            padding: 0 28px
+            font-size: 24px
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-weight: 100
+            line-height: 35px
+            color: #fff
+            z-index: 2
+            left: 0
+            .catalog_item_price
+                font-size: 35px
+                line-height: 1
+                margin-top: 10px
+                &_individual
+                    font-size: 20px
+                    font-weight: 300
+                    sup
+                        display: none
+        &_info
+
+            +flex(space-between, center, 25px)
+            margin-top: 15px
+            align-items: center
+            padding: 0 25px
+            flex-wrap: wrap
+            &_items
+                +flex(space-between, center, 25px)
+                width: 100%
+            &_item
+                font-size: 10px
+                color: #000
+                text-transform: uppercase
+                letter-spacing: 2px
+                margin-bottom: 15px
+                display: flex
+                gap: 5px
+                /*под вопросом*/
+                align-items: center
+                width: 31%
+                img
+                    max-width: 25px
+                &_quantity
+                    font-size: 25px
+                    font-weight: 100
+                    font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+
+            &_desc
+                +flex(space-between, center, 25px)
+                padding: 0 25px
+                margin-top: 15px
+                width: 100%
+                &_title
+                    font-size: 10px
+                    color: #000
+                    text-transform: uppercase
+                    letter-spacing: 1.5px
+                    margin-bottom: 13px
+
+                &_sq
+                    font-weight: 400
+                    font-size: 30px
+                    color: #ff8156
+                    span
+                        font-size: 16px
+                        margin-left: 10px
+        .compare-button
+            line-height: 30px
+            font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+            font-size: 10px
+            font-weight: 500
+            text-transform: uppercase
+            background: #ff8156
+            letter-spacing: 2px
+            text-align: center
+            border: 1px solid #ff8156
+            -webkit-transition: all .5s ease
+            transition: all .5s ease
+            padding: 0px 15px
+            max-width: 280px
+            margin: 0 auto
+            margin-top: 25px
+            a
+                color: #fff
+
+    &_inner
+        &_items
+            +flex(space-between, flex-start, 25px)
+        &_sidebar
+            width: 25%
+            position: sticky
+            top: 80px
+        .catalog_items
+            width: 65%
+            justify-content: space-between
+            .catalog_item
+                width: 48%
+
+    &_news
+        &_items
+            +flex(space-between, flex-start, 25px)
+        &_item
+            +flex(space-between, flex-start, 25px)
+            width: 33%
+            height: 250px
+            flex-direction: column
+            background-position: center
+            background-size: cover
+            color: #fff
+            padding: 30px
+            &_head
+                color: #000
+                font-size: 20px
+                font-weight: 700
+                text-transform: uppercase
+                background-color: #fff
+                border-radius: 50px
+                padding: 5px 7px
+            &_name
+                font-size: 26px
+            a
+                color: #fff
+                text-decoration: underline
+                background-color: #0000007d
+                border-radius: 50px
+                padding: 5px 15px
+                font-size: 16px
+                margin: 0
+
+    &_each_house_is_unique
+        h2
+            margin-bottom: 31px
+        p
+            max-width: 872px
+            line-height: 30px
+
+    &_category_description
+        h2
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-weight: 100
+            font-size: 35px
+            color: #e38058
+            margin-bottom: 23px
+            margin-top: 30px
+            text-align: center
+        .content_block_hide
+            overflow: hidden
+            position: relative
+            max-height: 300px
+            &:after
+                content: ""
+                display: block
+                height: 100px
+                position: absolute
+                left: 0
+                right: 0
+                bottom: 0
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 75%)
+        p
+            line-height: 24px
+            height: inherit
+        a
+            color: #e38058
+            margin-top: 35px
+
+.cost_calculation
+    &_wrap
+        +flex(space-between, center, 25px)
+        padding: 45px 40px
+        border: 2px solid #ff8156
+        margin-bottom: 42px
+        &_title
+            +flex(space-between, center, 25px)
+            img
+                max-width: 66px
+                max-height: 59px
+            p
+                font-size: 24px
+                line-height: 34px
+                color: #ff8156
+                max-width: 720px
+        a
+            padding: 0 35px
+
+.сonstruction_technology
+    color: #fff
+    h2
+        color: #fff
+    .container
+        +flex(space-between, center, 25px)
+    &_info
+        width: 48%
+        position: relative
+        padding: 50px
+        &_img_fly
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100% !important
+            z-index: -1
+        &_img
+            max-width: 49px
+            margin: 0 auto
+        h2
+            font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+            font-size: 24px
+            font-weight: 500
+            margin-bottom: 33px
+            text-align: center
+            margin: 30px 0
+        p
+            font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+            font-size: 18px
+            font-weight: 300
+            line-height: 30px
+            color: #dedede
+            max-width: 432px
+            margin: 0 auto 30px
+            text-align: center
+        a
+            margin: 0 auto
+            max-width: fit-content
+            background: transparent
+
+    &_advantages
+        &_items
+            +flex(space-between, center, 50px 25px)
+            flex-wrap: wrap
+            width: 48%
+            position: relative
+            &:before
+                content: ""
+                position: absolute
+                width: 1px
+                height: 100%
+                background: #ff8156
+                left: 0
+                right: 0
+                margin: auto
+        &_item
+            width: 47%
+            font-size: 18px
+            color: #ff8156
+            &_img
+                max-width: 50px
+                margin: 0 auto
+            h3
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-weight: 500
+                margin: 20px 0 10px
+                text-align: center
+            p
+                text-align: center
+                margin-top: 10px
+        &_item:nth-child(3)
+            .сonstruction_technology_advantages_item_img
+                max-width: 93px
+                max-height: 50px
+            p
+                margin-top: 20px
+
+        &_item:nth-child(4)
+            .сonstruction_technology_advantages_item_img
+                max-width: 188px
+                max-height: 50px
+            p
+                margin-top: 20px
+
+.acquaintance
+    position: relative
+    +flex(center, center, 50px)
+    padding-top: 51px
+    padding-bottom: 186px
+    margin-bottom: 0
+    //background: url('/img/acquaintance_bkg.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50%
+    h2
+        color: #fff
+        text-align: center
+        margin-bottom: 30px
+    &_background_fly
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        z-index: -1
+        max-height: 582px
+        overflow: hidden
+        background-position: 50%
+    &_info
+        color: #fff
+        p
+            font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+            font-weight: 300
+            font-size: 18px
+            line-height: 30px
+            color: #fff
+            text-align: center
+            max-width: 970px
+            margin-left: auto
+            margin-right: auto
+            margin-bottom: 30px
+
+    &_video
+        text-align: center
+        display: block
+        margin-bottom: 54px
+        +flex(center, center, 20px)
+        margin-top: 25px
+        .play_btn
+            position: relative
+            width: 37px
+            height: 37px
+            line-height: 37px
+            font-size: 27px
+            border-radius: 50px
+            margin: 0
+            top: 0
+            &:before, &:after
+                content: ""
+                border: 1px solid
+                width: 150%
+                height: 150%
+                border-color: #ff815c
+                border-radius: 50px
+                position: absolute
+                left: -25%
+                top: -25%
+                opacity: 1
+                animation: 1s a linear infinite
+                animation: 1s videomodule-anim linear infinite
+            &:before
+                animation-delay: .5s !important
+            img
+                width: 8px
+                height: 10px
+        p
+            font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+            font-size: 10px
+            line-height: 18px
+            color: #fff
+            letter-spacing: 2px
+            text-transform: uppercase
+            text-align: left
+            margin: 0
+.services
+    .first_screen
+        padding: 110px 0 200px
+        text-align: center
+        h1
+            font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+            line-height: 1.2
+            font-style: normal
+            font-size: 36px
+            margin-bottom: 12px
+        h2
+            font-size: 45px
+    .services_items
+        margin-top: -181px
+    &_items
+        position: relative
+        margin: 0
+        z-index: 2
+        &_inner
+            +flex(center, flex-start, 0)
+            flex-wrap: wrap
+            background: #f37854
+            position: relative
+            .services_item
+                width: 25%
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-size: 18px
+                color: #fff
+                text-decoration: none
+                text-align: center
+                position: relative
+                padding-top: 41px
+                padding-bottom: 35px
+                transition: all .5s ease
+                min-height: 213px
+                &_img
+                    margin-bottom: 20px
+                    width: 100%
+                    img
+                        max-height: 64px
+                        max-width: fit-content
+                        margin: 0 auto
+
+                h3
+                    font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                    font-size: 18px
+                    font-weight: 100
+                    line-height: 1.2
+                &:before
+                    content: ""
+                    position: absolute
+                    background: #e3633d
+                    right: 0
+                    top: 0
+                    width: 1px
+                    height: 100%
+                &:after
+                    content: ""
+                    position: absolute
+                    background: #e3633d
+                    right: 0
+                    bottom: 0
+                    width: 100%
+                    height: 1px
+                &:hover
+                    background: #e3633d
+
+            .services_item:nth-child(5)
+                &:after
+                    display: none
+
+            .services_item:nth-child(6)
+                &:after
+                    display: none
+
+            .services_item:nth-child(7)
+                &:after
+                    display: none
+
+            .services_item:nth-child(8)
+                &:after
+                    display: none
+
+            &:after
+                content: ""
+                position: absolute
+                width: 100%
+                height: 1px
+                background: #f37854
+                bottom: 0
+                left: 0
+                right: 0
+    &_text_after_items
+        h2
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-size: 45px
+            line-height: 1.2
+            font-style: normal
+            font-weight: 100
+            text-transform: none
+            margin-bottom: 31px
+        p
+            margin-bottom: 31px
+            font-size: 16px
+            line-height: 30px
+    &_inner
+        .first_screen
+            padding: 150px 0
+
+            h1
+                font-family: HelveticaNeueCyr-Regular, Arial, sans-serif
+                font-size: 52px
+                font-weight: 400
+                color: #fff
+                margin: 0
+                margin-bottom: 23px
+                text-align: center
+
+            p
+                font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                font-size: 16px
+                line-height: 30px
+                font-weight: 300
+                color: #fff
+                max-width: 650px
+                margin: 0 auto 33px
+                text-align: center
+            a
+                max-width: 320px
+                margin: 0 auto
+                margin-top: 25px
+
+        &_description
+            h2
+                font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                font-size: 35px
+                line-height: 1
+                font-weight: 300
+                color: #000
+                margin-bottom: 45px
+            &_text
+                line-height: 30px
+        &_specifications
+            &_items
+                +flex(space-around, flex-start, 55px 25px)
+                flex-wrap: wrap
+            &_item
+                width: 31.5%
+                &_img
+                    +flex(center, center, 0)
+                    width: 80px
+                    height: 80px
+                    background: #f37854
+                    border-radius: 50%
+                    margin: 0 auto
+                    margin-bottom: 17px
+                    img
+                        object-fit: scale-down
+                h3
+                    font-family: HelveticaNeueCyr-Bold, Arial, sans-serif
+                    font-weight: 700
+                    font-size: 16px
+                    line-height: 1.2
+                    margin-bottom: 14px
+                    text-align: center
+                p
+                    line-height: 24px
+                    text-align: center
+        &_philosophy
+            p
+                color: #f37854
+
+        &_sliders
+            position: relative
+            &_wrapper
+                .services_inner_slider_text
+                    font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                    font-size: 35px
+                    line-height: 35px
+                    letter-spacing: 20px
+                    text-transform: uppercase
+                    color: #000
+                    position: absolute
+                    top: 50%
+                    left: 23%
+                    transform: translateX(-50%) translateY(-50%) rotate(-90deg)
+                    z-index: 3
+        &_slider
+            overflow: hidden
+            position: relative
+            &:before
+                content: ""
+                position: absolute
+                top: 0
+                left: 0
+                width: 25%
+                height: 100%
+                background: #fff
+                z-index: 2
+            &_navigation
+                position: relative
+                height: 70px
+                right: calc(0px - 43VW)
+                width: 100%
+                background: #fff
+                z-index: 3
+                max-width: 147px
+                margin-top: -69px
+                &:after
+                    content: ""
+                    position: absolute
+                    height: 70px
+                    left: 0
+                    width: calc(100vw - 987px)
+                    background: #fff
+                    bottom: 0
+                    z-index: 2
+                .swiper-button-next:after, .swiper-button-prev:after
+                    font-size: 25px
+                    color: #000
+                .services_inner_slider_pagination_inner
+                    font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                    font-size: 24px
+                    line-height: 30px
+                    color: #000
+                .swiper-pagination
+                    &-current
+                        color: #f37854
+                    &-total
+                        font-weight: 600
+                    &-fraction
+                        top: 50%
+                        transform: translateY(-50%)
+                        z-index: 3
+                .swiper-button-next, .swiper-button-prev
+                    z-index: 4
+
+        &_slide
+            &_block
+                width: 100%
+                height: 500px
+                &_img
+                    position: relative
+                    height: 100%
+                    &_point
+                        position: absolute
+                        width: 25px
+                        height: 25px
+                        border-radius: 50%
+                        background: #ff7951
+                        transition: all .5s ease
+                        opacity: 0
+                        &_text
+                            background: #000
+                            min-width: 7.813vw
+                            position: absolute
+                            padding: 16px 20px 14px
+                            top: 100%
+                            left: 100%
+                            pointer-events: none
+                            opacity: 1
+                            transform: translateX(-50%) translateY(-50%) scale(0)
+                            transition: transform .8s ease
+                            color: #fff
+                        &::before, &::after
+                            content: ""
+                            position: absolute
+                            width: 12px
+                            height: 1px
+                            background: #fff
+                            top: 0
+                            left: 0
+                            right: 0
+                            bottom: 0
+                            margin: auto
+                            transition: transform .8s ease
+                        &::after
+                            transform: rotate(90deg)
+                        &:hover
+                            cursor: pointer
+                            .services_inner_slide_block_img_point_text
+                                transform: none
+                            &::before
+                                transform: rotate(-180deg)
+                            &::after
+                                transform: rotate(-90deg)
+        .swiper-slide.swiper-slide-active
+            .services_inner_slide_block_img_point
+                opacity: 1
+
+        &_detail_stages
+            &_items
+                +flex(space-between, flex-start, 25px)
+            &_item
+                +flex(space-between, flex-start, 15px)
+                position: relative
+                &:before
+                    content: ""
+                    position: absolute
+                    height: 1px
+                    background: #f37854
+                    top: 26px
+                    width: 90px
+                    left: -90px
+                &::after
+                    content: ""
+                    position: absolute
+                    background: #f37854
+                    width: 5px
+                    height: 5px
+                    border-radius: 50%
+                    top: 24px
+                    left: -95px
+                &_number
+                    +flex(center, center, 0)
+                    width: 50px
+                    height: 50px
+                    border-radius: 50%
+                    color: #f37854
+                    border: 1px solid #f37854
+                    text-align: center
+                &_description
+                    max-width: 218px
+                    h3
+                        font-size: 24px
+                        line-height: 24px
+                        margin-bottom: 25px
+                        font-weight: 400
+                    &_text
+                        line-height: 24px
+                &:first-child
+                    &:before, &::after
+                        opacity: 0
+        &_form
+            .contact_form
+                background: #ff8156
+                padding: 37px 84px
+                margin-top: 0
+                h2, .wpcf7 form .wpcf7-response-output
+                    color: #fff
+                .wpcf7-list-item
+                    margin-left: 0
+                    label
+                        display: flex
+                        align-items: center
+                        gap: 5px
+                        font-size: 12px
+                .wpcf7-submit
+                    background: #932d0a
+                    border: 1px solid #932d0a
+                    color: #fff
+                    font-size: 10px
+                    &:hover
+                        background: transparent
+
+        &_detail_text
+            &_title
+                font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+                font-size: 45px
+                line-height: 1.2
+                font-weight: 100
+                text-transform: none
+                padding: 0 30px
+                text-align: center
+
+.the_team_of_employees
+    h2
+        text-align: center
+    .tabs
+        overflow: hidden
+        border-radius: 15px
+        flex-wrap: wrap
+        margin-top: 25px
+        &_head
+            +flex(center, flex-start, 25px)
+        &_caption
+            transition: 0.25s
+            padding: 4px 20px
+            background: transparent
+            border: 1px solid #f37854
+            font-size: 14px
+            color: #909090
+            line-height: 24px
+            transition: all .5s ease
+            &:hover
+                cursor: pointer
+                background: #f37854
+                color: #fff
+            &_active
+                background: #f37854
+                color: #fff
+        &_body
+            background: var(--primary)
+            position: relative
+            top: -2px
+            transition: 0.25s
+        &_content
+            display: none
+            padding: 30px
+            color: var(--color)
+            //transform: scaleY(0.8)
+            opacity: 0
+            transform-origin: center top
+            animation: showContent 0.6s forwards
+            &_active
+                +flex(flex-start, flex-start, 25px)
+                opacity: 1
+            .about_command_item
+                width: 25%
+                box-shadow: 15.556px 15.556px 32px 0 rgba(0, 0, 0, .06)
+                max-width: 270px
+                &_text
+                    background: #fff
+                    padding: 30px
+                    padding-top: 16px
+                    &_name
+                        font-size: 24px
+                        line-height: 1.2
+                        margin-bottom: 16px
+                        max-width: 95%
+                    p
+                        font-size: 16px
+                        line-height: 1.2
+
+.faq
+    .faq_items
+        margin-top: 25px
+    h2
+        text-align: center
+
+    &_item
+        margin-bottom: 0.5rem
+        border-radius: 0.25rem
+        border-bottom: 1px solid #e3e2e2
+        &_show .faq_header::after,
+        &_slidedown .faq_header::after
+            transform: rotate(-180deg)
+        &:not(.faq_item_show) .faq_body
+            display: none
+        .up
+            display: none
+    &_header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-top: 36px
+        padding-bottom: 29px
+        color: #000
+        font-weight: 500
+        cursor: pointer
+        transition: background-color 0.2s ease-out
+        position: relative
+        font-size: 24px
+        &::after
+            width: 20px
+            height: 20px
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff8156'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
+            background-repeat: no-repeat
+            background-size: 20px
+            content: ""
+            transition: transform 0.2s ease-out
+            position: absolute
+            right: 0
+        &_arrow
+            display: flex
+            margin-right: 25px
+            line-height: 27px
+        span
+            font-family: HelveticaNeueCyr-Bold, Arial, sans-serif
+            font-weight: 700
+            font-size: 10px
+            color: #ff8156
+            text-transform: uppercase
+            letter-spacing: 2px
+    &_content
+        display: flex
+        flex-direction: column
+        background: #fff
+        font-size: 16px
+        line-height: 24px
+        padding-bottom: 30px
+        & a
+            position: relative
+            display: block
+            padding: 0.5rem 1rem
+            color: #212529
+            text-decoration: none
+            background-color: #fff
+            border: 1px solid rgb(0 0 0 / 12.5%)
+        & a:hover
+            background-color: #f8f9fa
+    &_item_show
+        .down
+            display: none
+        .up
+            display: block
+    &_btns
+        +flex(center, center, 25px)
+        margin-top: 25px
+    &_inner
+        .faq
+            padding-top: 0
+
+.reviews
+    margin: 100px 0 110px
+    .container
+        position: relative
+    .swiper
+        padding: 50px 0
+        &-slide
+            .play_btn
+                width: 37px
+                height: 37px
+                img
+                    width: 8px
+                    height: 10px
+        &-button-next:after, &-button-prev:after
+            color: #ff8156
+        &-pagination
+            bottom: -25px
+            &-bullet
+                background: #ff8156
+
+    &_slider
+        &_inner
+            +flex(space-between, center, 25px)
+            text-align: left
+            width: 84%
+            &_text
+                width: 50%
+                max-width: 500px
+            &_name
+                font-size: 24px
+                line-height: 24px
+            &_title
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-size: 10px
+                line-height: 36px
+                text-transform: uppercase
+                letter-spacing: 2px
+                color: #ff815c
+                margin-bottom: 13px
+            &_description
+                p
+                    font-size: 16px
+                    line-height: 26px
+            a
+                position: relative
+                max-width: 45%
+    &_inner_page
+        &_items
+            +flex(flex-start, flex-start, 25px)
+            flex-wrap: wrap
+        &_item
+            width: 31%
+            &_img
+                margin-bottom: 28px
+                overflow: hidden
+                img
+                    transition: all .3s ease
+
+            h2
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-weight: 500
+                font-size: 12px
+                color: #f28058
+                text-transform: uppercase
+                margin-bottom: 18px
+            &_name, &_text
+                font-family: HelveticaNeueCyr-Regular, Arial, sans-serif
+                font-weight: 400
+                color: #000
+                font-size: 24px
+                margin-bottom: 22px
+            &_text
+                p
+                    font-size: 16px
+                    line-height: 24px
+            &:hover .reviews_inner_page_item_img img
+                transform: scale(1.05)
+                cursor: pointer
+
+.partners
+
+    &_items
+        +flex(flex-start, flex-start, 0)
+        flex-wrap: wrap
+        border: 1px solid #f0f0f0
+    &_item
+        +flex(center, center, 25px)
+        border-right: 1px solid #f0f0f0
+        border-bottom: 1px solid #f0f0f0
+        flex-flow: column
+        width: 25%
+        height: 215px
+        text-align: center
+        &:nth-child(4n)
+            border-right: 0
+        &_img
+            padding: 0 15px
+            height: 102px
+            margin-bottom: 13px
+            -ms-flex-align: center
+            align-items: center
+            display: flex
+            -ms-flex-wrap: wrap
+            flex-wrap: wrap
+            -ms-flex-pack: center
+            justify-content: center
+            transition: all .3s ease
+            img
+                height: auto
+                max-height: 100%
+                width: auto
+                object-fit: contain
+        &_name
+            color: #ff8156
+            font-size: 14px
+            position: relative
+            padding-bottom: 5px
+            &:before
+                content: ""
+                position: absolute
+                width: 0
+                height: 1px
+                bottom: -2px
+                left: 0
+                background: #ff8156
+                transition: width .3s ease
+        &:hover
+            .partners_item_name
+                &:before
+                    transition: width .3s ease
+                    width: 100%
+.footer
+    background: #303030
+    padding: 50px 0
+    &_top_items
+        +flex(space-between, flex-start, 25px)
+    &_top_item
+        .footer_logo
+            max-width: 128px
+        p
+            font-size: 14px
+            color: #545454
+            margin-bottom: 38px
+            max-width: 275px
+        &_social
+            +flex(flex-start, center, 10px)
+            a
+                max-width: 32px
+        &_contact
+            &_phone
+                display: block
+                font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+                font-size: 30px
+                line-height: 30px
+                margin-bottom: 10px
+                letter-spacing: -.7px
+                color: #fff
+                transition: all .3s ease
+            &_callback
+                color: #ff8156
+                margin-bottom: 32px
+                text-decoration: underline
+            &_file
+                +flex(flex-start, center, 5px)
+                color: #fff
+                &_img
+                    max-width: 25px
+                div:nth-child(1)
+                    color: #ff8156
+                    font-size: 14px
+                    line-height: 17px
+                    margin-bottom: 3px
+                    text-decoration: underline
+                div:nth-child(2)
+                    font-size: 12px
+                    color: #545454
+                    text-align: left
+    &_top_item.footer_nav
+        +flex(space-between, flex-start, 25px)
+        width: 42%
+        li
+            margin-bottom: 20px
+        a
+            color: #aaa
+            font-size: 14px
+            line-height: 20px
+
+    &_bottom_items
+        +flex(space-between, center, 0)
+        flex-wrap: wrap
+        padding: 34px 0 15px
+        border-top: 1px solid #282828
+        border-bottom: 1px solid #282828
+        margin: 25px 0
+    &_bottom_item
+        p
+            font-size: 10px
+            line-height: 20px
+            margin-bottom: 8px
+            text-transform: uppercase
+            color: #fff
+        ul
+            +flex(space-between, center, 25px)
+            li
+                margin-bottom: 20px
+                a
+                    font-size: 14px
+                    color: #fff
+                    display: block
+                    font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                    font-weight: 300
+                    opacity: .3
+                    text-shadow: none
+                    -webkit-font-smoothing: antialiased
+    &_bottom_item:nth-child(2)
+        padding-left: 80px
+    &_copyright
+        +flex(space-between, center, 25px)
+        &_item
+            +flex(space-between, center, 25px)
+            a
+                font-size: 14px
+                color: #545454
+
+.about_page
+    .first_screen
+        //background: url(/img/about_first_screen_bkg.jpg)
+        background-repeat: no-repeat
+        background-size: cover
+        padding: 115px 0
+        &_cont
+            text-align: center
+            margin: 0 auto
+            h1
+                font-size: 18px
+                line-height: 1.2
+                margin-bottom: 8px
+            h2
+                color: #fff
+                font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+                font-size: 45px
+                line-height: 1.2
+                font-weight: 100
+                span
+                    display: block
+
+    .about_info
+        &_text
+            font-size: 16px
+            line-height: 30px
+            color: #000
+            margin-bottom: 50px
+        .about_advantages_items
+            +flex(space-between, center, 25px)
+        .about_advantages_item
+            &_img
+                margin: 0 auto
+                max-width: 64px
+            p
+                margin-top: 25px
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-size: 16px
+                line-height: 24px
+                text-align: center
+                max-width: 320px
+
+        &_blockquote
+            padding: 35px 80px
+            font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+            border-top: 1px solid #f37854
+            border-bottom: 1px solid #f37854
+            padding: 32px 0 36px
+            position: relative
+            text-align: center
+            font-size: 24px
+            line-height: 36px
+            color: #f37854
+            margin-bottom: 51px
+            margin-top: 75px
+            &::before
+                content: ""
+                position: absolute
+                left: 0
+                right: 0
+                top: -16px
+                margin: auto
+                width: 70px
+                height: 30px
+                background: #fff url(/wp-content/themes/mars-web.ru/assets/img/before-blockquote.png) no-repeat 50%
+        &_slider
+            &_pagination
+                .swiper-pagination-bullet
+                    background: transparent
+                    border: 2px solid #fff
+                    width: 12px
+                    height: 12px
+
+.contact_page
+    .first_screen
+        padding: 25px 0
+        .container
+            justify-content: center
+    .contact_info_item
+        +flex(space-between, center, 25px)
+        padding-top: 29px
+        padding-bottom: 29px
+        border-bottom: 1px solid #f6f6f6
+        &_city
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-weight: 100
+            font-size: 35px
+            width: 35%
+            padding: 0 20px
+        .contact_info_item_info
+            font-size: 16px
+            width: 35%
+            padding: 0 20px
+            &_company
+                font-family: HelveticaNeueCyr-Bold, Arial, sans-serif
+                font-weight: 700
+                margin-bottom: 2px
+        &_link
+            width: 22%
+            padding: 0 20px
+            a
+                max-width: max-content
+            &_phone
+                font-size: 24px
+                color: #000
+            &_email
+                position: relative
+                font-size: 16px
+                color: #f37854
+                margin-top: 5px
+                &::before
+                    content: ""
+                    position: absolute
+                    width: 0%
+                    height: 1px
+                    background: #ff8156
+                    bottom: 0
+                    left: 0
+                    transition: width .3s ease
+                &:hover::before
+                    width: 100%
+    .map
+        position: relative
+        overflow: hidden
+        iframe
+            height: 400px
+            border: none
+            width: 100%
+
+.contact_form
+    background: #f6f6f6
+    padding: 50px 95px 60px
+    margin-top: 50px
+    h2
+        font-size: 24px
+        line-height: 1.2
+        font-weight: 100
+        color: #000
+        margin-bottom: 20px
+    &_top
+        +flex(space-between, flex-start, 25px)
+        &_item
+            width: 33%
+            &_subtitle
+                font-size: 14px
+                font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                line-height: 14px
+                margin-bottom: 5px
+                width: 100%
+            p
+                font-size: 10px
+                color: #aeaeae
+                text-transform: uppercase
+                margin-bottom: 20px
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-weight: 500
+                span
+                    margin-left: 2px
+                    color: red
+            input
+                width: 100%
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-weight: 500
+                font-size: 14px
+                color: #000
+                line-height: 50px
+                padding: 0 15px
+                border: none
+
+    &_bottom
+        margin-top: 25px
+        p
+            font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+            font-weight: 500
+            width: 100%
+            font-size: 10px
+            color: #aeaeae
+            text-transform: uppercase
+            margin-top: 20px
+            width: 100%
+            span
+                margin-left: 2px
+                color: red
+        textarea
+            width: 100%
+            font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+            font-weight: 500
+            font-size: 14px
+            color: #000
+            padding: 15px
+            border: none
+            resize: none
+        &_item
+            +flex(space-between, center, 25px)
+            flex-wrap: wrap
+            margin-top: 25px
+            &_left
+                p
+                    +flex(space-between, center, 10px)
+                    margin: 0
+                    cursor: pointer
+                    min-width: max-content
+                    text-decoration: underline
+                    span
+                        color: #ff8156
+                        font-size: 14px
+                        max-width: max-content
+
+                    .wpcf7-form-control-wrap
+                        position: absolute
+                        opacity: 0
+                img
+                    max-width: 30px
+        &_personal
+            font-size: 11px
+            color: #303030
+            max-width: 290px
+    .wpcf7-not-valid-tip
+        margin-top: 5px
+
+.technology_philosophy
+    &_inner
+        position: relative
+        border-top: 1px solid #f37854
+        border-bottom: 1px solid #f37854
+        padding: 42px 0
+        position: relative
+        text-align: center
+        &::before
+            content: ""
+            position: absolute
+            left: 0
+            right: 0
+            top: -26px
+            margin: auto
+            width: 107px
+            height: 49px
+            background: #fff url(/wp-content/themes/mars-web.ru/assets/img/before-blockquote.png) no-repeat 50%
+        h2
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-weight: 100
+            font-size: 35px
+            color: #e38058
+            margin-bottom: 23px
+        p
+            font-size: 24px
+            line-height: 36px
+            margin: 0 auto
+            max-width: 995px
+
+.thickness
+    //background-image: url(/img/thickness_bkg.jpg)
+    background-repeat: no-repeat !important
+    background-size: cover !important
+    color: #fff
+    position: relative
+    padding: 50px 0
+    h2
+        font-size: 36px
+        color: #fff
+        margin-bottom: 50px
+    &_top
+        text-align: center
+        color: #fff
+        cursor: pointer
+        border-bottom: 1px solid
+        &_inner
+            position: relative
+            padding-bottom: 30px
+        h3
+            color: #fff
+        .swiper-slide
+            &:after
+                content: ""
+                position: absolute
+                width: 0
+                height: 2px
+                background: #ff8156
+                left: 0
+                right: 0
+                margin: auto
+                bottom: -2px
+                transition: width .4s linear
+            &-thumb-active
+                &:after
+                    width: 100%
+                .cls-1
+                    fill: #ff8156
+                    fill-rule: evenodd
+                h3
+                    color: #ff8156
+        &_img
+            max-width: 50px
+            max-height: 50px
+            margin: 0 auto
+            margin-bottom: 20px
+        .cls-1
+            fill: #fff
+            fill-rule: evenodd
+
+    &_bottom
+        overflow: hidden
+        h3
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-weight: 100
+            font-size: 35px
+            margin: 25px 0 35px
+            text-align: left
+        &_info_inner
+            +flex(space-between, flex-start, 10px)
+            &_item
+                width: 57.35%
+            &_item:first-child
+                max-width: 32.05%
+                p
+                    font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                    font-weight: 300
+                    font-size: 24px
+                    line-height: 26px
+        &_info
+            &_text
+                font-size: 10px
+                color: #c1c1c1
+                text-transform: uppercase
+                letter-spacing: 2px
+                margin-bottom: 20px
+                &_desc
+                    font-weight: 500
+                    font-size: 24px
+            p
+                font-size: 15px
+                margin-bottom: 10px
+                line-height: 26px
+        hr
+            background: rgba(255, 255, 255, .32)
+            margin: 20px 0
+.technology
+    .first_screen
+        padding: 100px 0
+        .shadow
+            display: none
+        &_cont
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-weight: 100
+            text-align: center
+            h1
+                font-size: 52px
+                margin-bottom: 13px
+            h2
+                font-size: 24px
+                color: #fff
+                margin-bottom: 35px
+
+    &_privilege
+        h2
+            text-align: center
+        &_items
+            +flex(space-between, flex-start, 50px 10px)
+            flex-wrap: wrap
+            margin: 50px 0
+            position: relative
+            &::before, &::after
+                content: ""
+                position: absolute
+                width: 1px
+                height: 100%
+                background: #ff8156
+                top: 0
+            &::before
+                left: 31.5%
+            &::after
+                right: 33.5%
+        &_item
+            width: 31%
+            font-size: 16px
+            line-height: 22px
+            text-align: center
+            padding: 0 10px
+            &_img
+                max-width: 50px
+                margin: 0 auto
+            h3
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-weight: 500
+                color: #ff8156
+                margin-top: 15px
+                margin-bottom: 24px
+
+        &_bottom
+            &_subtitle
+                font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+                font-weight: 100
+                font-size: 35px
+                color: #ff8156
+                text-align: center
+                margin: 0 auto
+                margin-top: 25px
+                max-width: 832px
+            a
+                max-width: 230px
+                margin: 0 auto
+                margin-top: 25px
+
+    &_cut
+        &_item
+            position: relative
+
+        &_slider
+            padding: 0 10px 40px
+            margin-top: 12px
+            li
+                font-size: 16px
+                line-height: 30px
+                color: #000
+
+    &_history
+        padding: 50px 0
+        background: #f6f6f6
+        &_top
+            overflow: hidden
+            margin-top: 45px
+            &_inner
+                +flex(space-between, center, 40px)
+                &_img
+                    width: 50%
+                &_info
+                    width: calc(50% - 25px)
+                    &_number
+                        max-width: 340px
+                        margin-bottom: 25px
+                    p
+                        font-size: 24px
+                        text-align: left
+                        line-height: 40px
+
+        &_bottom
+            position: relative
+            margin-top: 50px
+            padding: 0 50px
+            max-width: 870px
+            margin: 0 auto
+            margin-top: 60px
+            &_number
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-weight: 500
+                color: #ff8156
+                color: #aeaeae
+                text-align: center
+                position: relative
+                cursor: pointer
+                font-size: 14px
+                width: 100%
+                &:before, &:after
+                    content: ""
+                    position: absolute
+                    width: 35%
+                    height: 1px
+                    background: #e3e2e2
+                    top: 0
+                    bottom: 0
+                    margin: auto
+                &:before
+                    left: 0
+                &:after
+                    right: 0
+
+            &_number:last-child
+                &:before
+                    left: 0
+                &:after
+                    right: 0
+            .swiper
+                &-slide-thumb-active
+                    .technology_history_bottom_number
+                        color: #ff8156
+                &-button-prev
+                    &:after
+                        font-size: 25px
+                        color: #000
+
+                &-button-next
+                    &:after
+                        font-size: 25px
+                        color: #000
+
+@media (min-width: 992px)
+    .technology_cut_slider
+        display: none
+
+@media (min-width: 768px) and (max-width: 991px)
+    .technology_cut_slider
+        .slick-dots
+            opacity: 0
+
+@media (max-width: 767px)
+    .technology_cut
+        margin-bottom: 40px
+        &__item
+            padding-top: 56px
+        &__title
+            background: url("../images/cut-bg.png") no-repeat center
+            width: 100%
+            left: 0
+            background-size: cover
+            height: 122px
+            top: 0px
+            text-align: center
+            padding-top: 20px
+        img
+            height: 459px
+            object-fit: cover
+            object-position: center
+
+.mapHouse
+    label
+        cursor: pointer
+        width: 31px
+        height: 31px
+        border-radius: 30px
+        position: absolute
+        z-index: 9
+        &:hover
+            .labelIn
+                display: block
+
+    .labelIn
+        position: relative
+        text-align: center
+        padding: 8px 10px
+        width: 170px
+        background: #000
+        margin: 45px 0 0 -65px
+        display: none
+        font-size: 16px
+        color: #fff
+        &:before
+            content: ""
+            position: absolute
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 0 7.5px 7px 7.5px
+            border-color: transparent transparent #000000 transparent
+            top: -7px
+            left: 0
+            right: 0
+            margin: auto
+
+.mapHouse
+    .map-1
+        top: 82.10227273%
+        left: 36.87436159%
+    .map-2
+        top: 86.36363636%
+        left: 37.48723187%
+    .map-3
+        top: 77.84090909%
+        left: 44.43309499%
+    .map-4
+        top: 84.94318182%
+        left: 49.02962206%
+    .map-5
+        top: 85.36931818%
+        left: 52.60469867%
+    .map-6
+        top: 89.63068182%
+        left: 48.92747702%
+    .map-7
+        top: 82.8125%
+        left: 64.6578141%
+    .map-8
+        top: 79.97159091%
+        left: 61.28702758%
+    .map-9
+        top: 75.99431818%
+        left: 51.9918284%
+    .map-10
+        top: 75%
+        left: 55.05617978%
+    .map-11
+        top: 76.13636364%
+        left: 58.42696629%
+    .map-12
+        top: 70.3125%
+        left: 66.49642492%
+    .map-13
+        top: 67.61363636%
+        left: 70.68437181%
+    .map-14
+        left: 62.0020429%
+    .map-15
+        left: 56.17977528%
+    .map-16
+        top: 56.53409091%
+        left: 54.03472932%
+    .map-17
+        top: 47.15909091%
+        left: 55.15832482%
+    .map-18
+        top: 48.15340909%
+        left: 52.19611849%
+    .map-19
+        top: 40.76704545%
+        left: 60.36772217%
+    .map-20
+        top: 38.63636364%
+        left: 66.18998979%
+    .map-21
+        top: 25.14204545%
+        left: 67.31358529%
+    .map-22
+        top: 21.44886364%
+        left: 56.48621042%
+    .map-23
+        top: 22.44318182%
+        left: 53.1154239%
+    .map-24
+        top: 22.15909091%
+        left: 49.94892748%
+    .map-25
+        top: 28.26704545%
+        left: 50.56179775%
+    .map-26
+        top: 11.07954545%
+        left: 58.83554648%
+    .map-27
+        top: 22.01704545%
+        left: 46.78243105%
+    .map-28
+        top: 15.76704545%
+        left: 58.73340143%
+    .map-29
+        top: 10.08522727%
+        left: 49.54034729%
+    .map-30
+        top: 89.91477273%
+        left: 72.42083759%
+    .map-31
+        top: 88.49431818%
+        left: 76.09805924%
+    .map-32
+        top: 86.36363636%
+        left: 79.67313585%
+    .map-33
+        top: 81.10795455%
+        left: 77.01736466%
+    .map-34
+        top: 74.85795455%
+        left: 77.22165475%
+    .map-35
+        top: 69.60227273%
+        left: 76.30234934%
+
+#map
+    height: 443px
+
+.product
+    &_slider_photo
+        position: relative
+        .product_slide_img_galery
+            position: relative
+            width: 100%
+            height: 440px
+            a
+                height: 100%
+        .swiper-slide
+            position: relative
+            &:before, &.swiper-slide-newxt:before, &.swiper-slide-prev:before
+                background: linear-gradient(90deg, hsla(0, 0%, 0%, .5) 0, hsla(0, 0%, 0%, 0.5) 68%, hsla(0, 0%, 100%, 0) 99%)
+                content: ""
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                z-index: 2
+            &.swiper-slide-active
+                &:before
+                    background: transparent
+                    z-index: 0
+                .product_slide_btn
+                    opacity: 1
+                    transition: all .15s
+        .product_slide_btn
+            position: absolute
+            width: 100%
+            height: 65px
+            background: rgba(0, 0, 0, .6)
+            bottom: 0
+            opacity: 0
+            +flex(center, center, 13px)
+            a
+                +flex(center, center, 13px)
+                font-size: 14px
+                color: #fff
+                position: relative
+                img
+                    transform: rotate(-90deg)
+                    max-width: 30px
+                p
+                    max-width: 100px
+                    text-align: left
+        .product_slider_photo_navigation
+            position: absolute
+            max-width: calc( 100% - 50% )
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            width: 100%
+            z-index: 3
+            .swiper-button-next:after, .swiper-button-prev:after
+                color: #fff
+                font-size: 55px
+
+    &_info
+        &_inner
+            &_top
+                +flex(space-between, center, 25px)
+                font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+                font-weight: 100
+                h1
+                    font-size: 45px
+                    line-height: 1.2
+                    text-transform: none
+                    max-width: 550px
+                    text-align: center
+                    font-weight: 100
+                    margin: 0
+                &_price
+                    font-size: 58px
+                    color: #000
+                    line-height: 1
+                a
+                    max-width: max-content
+                    padding: 0px 22px
+
+            &_items
+                +flex(center, center, 25px)
+                margin: 30px 0
+                padding: 40px 0
+                border-top: 1px solid #f0f0f0
+                border-bottom: 1px solid #f0f0f0
+            &_item
+                text-align: center
+                width: 16.66%
+                position: relative
+                p
+                    font-family: HelveticaNeueCyr-Bold, Arial, sans-serif
+                    font-weight: 700
+                    font-size: 12px
+                    text-transform: uppercase
+                    letter-spacing: 2px
+
+                div
+                    margin-top: 15px
+                    font-size: 30px
+                    color: #ff8156
+                &:not(:last-child):before
+                    content: ""
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    width: 1px
+                    background: #f0f0f0
+                    height: 53px
+                    margin-top: -29px
+            &_bottom
+                p
+                    line-height: 30px
+                    font-size: 16px
+                    margin: 10px 0
+
+                &_social
+                    +flex(flex-start, center, 25px)
+                    margin-top: 25px
+                    &_items
+                        +flex(flex-start, center, 5px)
+                        a
+                            width: 33px
+                            height: 32px
+                            padding: 0 9px
+                            box-sizing: content-box
+                            filter: grayscale(100%)
+                            filter: url(grayscale.svg#greyscale)
+                            filter: gray
+                            -webkit-filter: grayscale(1)
+                            opacity: .6
+                            transition: all .3s ease
+                            &:hover
+                                opacity: 1
+                                filter: none
+    &-template-default
+        .video_galery ul li
+            width: 32%
+.included_price
+    //background-image: url(/img/included_price_bkg.jpg)
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    padding: 50px 0
+    h2
+        font-family: HelveticaNeueCyr-Thin,Arial,sans-serif
+        font-size: 45px
+        line-height: 1.2
+        font-style: normal
+        font-weight: 100
+        color: #ffffff
+        text-transform: none
+        text-rendering: optimizeLegibility
+        margin-bottom: 49px
+
+    &_tabs
+        &_container
+            min-height: 640px
+            background: #fff
+            padding: 20px
+            box-sizing: border-box
+            box-shadow: rgba(33, 35, 38, 0.1) 0 10px 10px -10px
+            &_list
+                +flex(space-around, center, 25px)
+            &_item
+                +flex(center, center, 0)
+                width: 170px
+                font-family: HelveticaNeueCyr-Medium,Arial,sans-serif
+                font-size: 10px
+                font-weight: 500
+                text-transform: uppercase
+                min-height: 40px
+                line-height: 130%
+                cursor: pointer
+                letter-spacing: 1px
+                transition: 0.2s
+                border: 1px solid #ff8156
+                text-align: center
+                &_active
+                    background: #ff8156
+                    color: #fff
+
+            &_info
+                width: 94%
+                margin: 45px auto 35px
+                h2
+                    font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                    animation-name: includedSmoothTop
+                    animation-duration: 0.3s
+                    font-size: 28px
+                    line-height: 120%
+                    font-weight: 500
+                    color: #ff8156
+                    margin-bottom: 20px
+                &_hidden
+                    display: none
+                h3
+                    font-size: 24px
+                    margin-top: 20px
+                b
+                    font-family: HelveticaNeueCyr-Bold
+                ul
+                    list-style-type: square
+                    padding: 0 0 0 20px
+                    li
+                        animation-name: includedSmoothBottom
+                        animation-duration: 0.7s
+                        line-height: 22px
+                        margin: 10px 0
+                &_text
+                    animation-name: includedSmoothBottom
+                    animation-duration: 0.7s
+                    line-height: 22px
+                    margin-bottom: 20px
+
+    @keyframes includedSmoothTop
+        0%
+            opacity: 0.2
+            transform: translateY(7%)
+
+        100%
+            opacity: 1
+            transform: translateY(0%)
+
+    @keyframes includedSmoothBottom
+        0%
+            opacity: 0.2
+            transform: translateY(-3%)
+
+        100%
+            opacity: 1
+            transform: translateY(0%)
+
+.photo_galery, .video_galery
+    img
+        aspect-ratio: 1 / 1
+        transition: transform 1000ms
+    .galery_title
+        +flex(space-between, center, 34px)
+        h1
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-size: 45px
+            line-height: 1.2
+            font-style: normal
+            font-weight: 100
+            color: #000
+            text-transform: none
+            margin: 0
+        a
+            +flex(flex-end, center, 15px)
+            font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+            font-weight: 500
+            font-size: 14px
+            color: #ff8156
+            min-width: 220px
+            img
+                max-width: 25px
+                max-height: 24px
+            p
+                position: relative
+                &:before
+                    content: ""
+                    position: absolute
+                    bottom: -2px
+                    width: 100%
+                    height: 1px
+                    background: #ff8156
+
+    ul
+        +flex(space-between, flex-start, 10px)
+        flex-wrap: wrap
+        margin-top: 50px
+        li
+            width: 49%
+    figure
+        position: relative
+        overflow: hidden
+        height: 250px
+
+    figure::after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 200%
+        height: 200%
+        background: rgba(0, 0, 0, 0.5)
+        transform-origin: center
+        opacity: 0
+        transform: scale(2)
+        transition: opacity 300ms
+    figure:before
+        content: ""
+        position: absolute
+        width: 100%
+        height: 100%
+        background: linear-gradient(0deg, rgba(0, 0, 0, .5), transparent)
+        background-size: 100% auto
+        z-index: 1
+    figcaption
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        +flex(flex-end, flex-start, 10px)
+        flex-wrap: wrap
+        flex-direction: column
+        padding: 20px
+        z-index: 1
+        opacity: 0
+        transition: opacity 600ms, transform 600ms
+        text-align: left
+        h2
+            font-size: 30px
+            width: 100%
+            color: #f28058
+        h3
+            font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+            font-weight: 300
+            font-size: 16px
+            line-height: 24px
+            color: #ddd
+            margin: 10px 0 0
+
+    a:is(:hover, :focus) figure::after
+        opacity: 1
+
+    a:is(:hover, :focus) figcaption
+        opacity: 1
+        transition: opacity 600ms
+
+    @media (prefers-reduced-motion: no-preference)
+        figcaption
+            transform: translate3d(0, 2rem, 0)
+
+        figure::after
+            border-radius: 50%
+            opacity: 1
+            transform: scale(0)
+            transition: transform 900ms
+
+        a:is(:hover, :focus) figure::after
+            transform: scale(2.5)
+
+        a:is(:hover, :focus) figcaption
+            opacity: 1
+            transform: translate3d(0, 0, 0)
+            transition: opacity 600ms 400ms, transform 600ms 400ms
+
+        a:is(:hover, :focus) img
+            transform: scale(1.2)
+
+    &_btn
+        max-width: 250px
+        margin: 0 auto
+        margin-top: 25px
+.video_galery_item_info
+    +flex(space-between, center, 15px)
+    width: 100%
+    &_others
+        +flex(flex-end, center, 15px)
+        &_icon
+            width: 37px
+            height: 37px
+            border-radius: 50%
+            background: #ff8156
+            position: relative
+            top: 1px
+            transition: all .3s ease
+            &::before
+                content: ""
+                position: absolute
+                width: 8px
+                height: 10px
+                left: 0
+                right: 0
+                top: 0
+                bottom: 0
+                margin: auto
+                background: url(/wp-content/themes/mars-web.ru/assets/img/icon-play.png) no-repeat 50%
+
+/*.video_galery
+ .galery_title
+ +flex(space-between, center, 34px)
+ h2
+ font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+ font-size: 45px
+ line-height: 1.2
+ font-style: normal
+ font-weight: 100
+ color: #000
+ text-transform: none
+ margin: 0
+ a
+ +flex(center, center, 15px)
+ font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+ font-weight: 500
+ font-size: 14px
+ color: #ff8156
+ min-width: 220px
+ img
+ max-width: 25px
+ max-height: 24px
+ p
+ position: relative
+ &:before
+ content: ""
+ position: absolute
+ bottom: -2px
+ width: 100%
+ height: 1px
+ background: #ff8156
+
+ &_items
+ +flex(flex-start, center, 25px)
+ margin-top: 50px
+ flex-wrap: wrap
+ &_item
+ position: relative
+ overflow: hidden
+ width: 31%
+ &_img
+ transition: all .3s ease
+ height: 235px
+ &_info
+ width: 100%
+ padding: 0 20px
+ bottom: 20px
+ position: absolute
+ +flex(space-between, center, 25px)
+ h3
+ font-size: 18px
+ line-height: 24px
+ color: #fff
+ transition: all .3s ease
+ text-transform: uppercase
+ &_others
+ +flex(flex-end, center, 15px)
+ &_icon
+ width: 37px
+ height: 37px
+ border-radius: 50%
+ background: #ff8156
+ position: relative
+ top: 1px
+ transition: all .3s ease
+ &::before
+ content: ""
+ position: absolute
+ width: 8px
+ height: 10px
+ left: 0
+ right: 0
+ top: 0
+ bottom: 0
+ margin: auto
+ background: url(/wp-content/themes/mars-web.ru/assets/img/icon-play.png) no-repeat 50%
+ &:hover
+ .video_galery_item_img, .video_galery_item_info_others_icon
+ transform: scale(1.05)
+ h3
+ color: #ff8156
+
+.news
+    margin: 0
+    padding: 50px 0
+    &_page .first_screen
+        padding: 25px 0
+    &_items
+        +flex(flex-start, center, 25px)
+        flex-wrap: wrap
+    &_item
+        +flex(flex-start, center, 25px)
+        flex-wrap: wrap
+        border-radius: 25px
+        background: #fff
+        width: 31%
+        overflow: hidden
+        &_img
+            width: 100%
+            height: 180px
+            overflow: hidden
+            transition: all 0.3s
+            img
+                transition: all 0.3s
+            &:hover
+                cursor: pointer
+                img
+                    transition: all 0.3s
+                    transform: scale(1.1)
+        &_info
+            width: 100%
+            padding: 0px 25px 30px
+            &_date
+                color: #999999
+                margin-bottom: 5px
+            h2
+                font-size: 20px
+                margin-bottom: 30px
+            button
+                line-height: 40px
+                padding: 0px 20px
+    &_btn
+        text-align: center
+        margin-top: 25px
+
+    &_subscription
+        &_inner
+            +flex(space-around, center, 25px)
+            background: #f6f6f6
+            padding: 54px 100px 58px
+            h3
+                font-size: 24px
+                max-width: 230px
+                font-weight: 400
+            form
+                +flex(flex-end, center, 25px)
+                input
+                    border: 1px solid #d2606c
+                    line-height: 49px
+                    padding: 0 24px
+    &_detail
+        padding: 50px 0
+        margin-bottom: 0
+        padding-bottom: 0
+        &_header
+            background-size: cover
+            background-position: 50%
+            background-repeat: no-repeat
+            height: 401px
+            position: relative
+            padding: 0 100px
+            margin-bottom: 58px
+            &:before
+                content: ""
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: rgb(0, 0, 0, .4)
+            &_info
+                position: absolute
+                bottom: 40px
+                color: #fff
+                z-index: 2
+                h1
+                    font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+                    font-weight: 100
+                    font-size: 35px
+                    margin-bottom: 10px
+                    line-height: 90px
+                p
+                    font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                    font-weight: 500
+                    font-size: 10px
+                    color: #dfdfdf
+                    text-transform: uppercase
+                    letter-spacing: 2px
+
+        &_content
+            max-width: 870px
+            margin: 0 auto
+            &_social
+                margin-top: 30px
+                p
+                    margin-bottom: 18px
+                    font-size: 14px
+                &_links
+                    +flex(flex-start, center, 15px)
+                    flex-wrap: wrap
+                    a
+                        width: 32px
+                        height: 32px
+                        box-sizing: content-box
+                        filter: grayscale(100%)
+                        filter: gray
+                        -webkit-filter: grayscale(1)
+                        opacity: .6
+                        transition: all .3s ease
+                        &:hover
+                            opacity: 1
+                            filter: none
+                        img
+                            object-fit: contain
+            &_inner
+                margin-top: 50px
+                p
+                    margin-bottom: 31px
+                    line-height: 30px
+                    a
+                        color: #aaa
+                h2
+                    margin-bottom: 31px
+
+        &_navigation
+            +flex(space-between, center, 25px)
+            margin: 100px 0 0
+            border-top: 1px solid #f8f8f8
+            border-bottom: 1px solid #f8f8f8
+            padding: 30px 0
+            a
+                position: relative
+                font-family: HelveticaNeueCyr-Bold, Arial, sans-serif
+                font-weight: 700
+                font-size: 10px
+                color: #000
+                text-transform: uppercase
+                letter-spacing: 2px
+                transition: all .3s ease
+                line-height: 2
+                &:before
+                    content: ""
+                    position: absolute
+                    background: url(/wp-content/themes/mars-web.ru/assets/img/arrow.png)
+                    background-repeat: no-repeat
+                    background-size: cover
+                    background-position: 50%
+                    width: 10px
+                    height: 17px
+                    top: 50%
+                    bottom: 0
+                    transform: translateY(-50%)
+                &:hover
+                    color: #ff8156
+
+            &_link_prev
+                padding-left: 30px
+                &:before
+                    left: 0
+            &_link_next
+                padding-right: 30px
+                &:before
+                    right: 0
+                    transform: rotate(180deg) translateY(50%) !important
+
+.animated
+    animation-duration: 1.5s
+    animation-fill-mode: both
+
+    &.infinite
+        animation-iteration-count: infinite
+
+    &.hinge
+        animation-duration: 2s
+
+@keyframes A
+    0%
+        opacity: 0
+        transform: translateY(20px)
+
+    to
+        opacity: 1
+        transform: translateY(0)
+
+.fadeInUp
+    animation-name: A
+
+    &Big
+        animation-name: gb
+
+@keyframes gb
+    0%
+        opacity: 0
+        transform: translateY(2000px)
+
+    to
+        opacity: 1
+        transform: translateY(0)
+
+@media (min-width: 992px)
+    .wow
+        visibility: hidden
+@media (max-width: 991px)
+    .header_menu_detail
+        h2
+            position: relative
+            border-bottom: 1px solid #2b2b2b
+            margin-bottom: 0
+            padding: 22px 0 21px
+        &_item_list
+            display: none
+
+        .active_block
+            display: block
+            border-bottom: 1px solid #2b2b2b
+
+.home-quiz
+    margin-bottom: 40px
+    position: relative
+    &__wrapper
+        width: 100%
+        margin-top: -190px
+        position: relative
+        z-index: 2
+        display: grid
+        grid-template-columns: 1fr minmax(min-content, max-content)
+        gap: 0
+        background: #fff
+
+    .form-diller
+        min-height: 400px
+
+    .form-diller__file
+        position: absolute
+
+    .home-acquaintance
+        padding-top: 51px
+        padding-bottom: 210px
+        background-size: cover
+        background-position: 50%
+        background-repeat: no-repeat
+        h2
+            margin-bottom: 10px
+            color: #fff
+            text-align: center
+        p
+            font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+            font-weight: 300
+            font-size: 18px
+            line-height: 30px
+            color: #fff
+            text-align: center
+            max-width: 970px
+            margin: 0 auto
+            //margin-bottom: 60px
+
+    &__inner
+        background: #f6f6f6
+        padding: 30px
+        min-height: 338px
+        .form-callback__submit
+            position: absolute
+            bottom: -25px
+            margin: 0
+            right: 0
+            max-width: 230px
+            background: #ff8156
+            border: 0 solid transparent
+            border-radius: 0!important
+            color: #fff
+            font-size: 12px
+            line-height: 12px
+            padding: 6px 10px 4px 10px
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-weight: 600
+            letter-spacing: 1px
+        .fieldset-cf7mls
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            min-height: 290px
+            .contact_form
+                padding: 0
+                margin: 0
+
+        & .cf7mls-btns .cf7mls_next.action-button, & .cf7mls-btns .cf7mls_back.action-button
+            margin: 0
+            padding: 13px 15px
+        .cf7mls_back.action-button
+            max-width: 130px
+        .wpcf7-form .fieldset-cf7mls .cf7mls-btns
+            min-height: 40px
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: flex-end
+        .cf7mls_next.action-button
+            background-color: #ff8156
+            border-radius: 0
+            margin: 0 0 0 auto!important
+            padding: 13px 7px
+            min-width: 120px
+            min-height: 40px
+            font-family: HelveticaNeueCyr-Light,Arial,sans-serif
+            font-weight: 100
+    &__radio .wpcf7-list-item, &-inner__menu-wrapper select
+        background: #fff
+        border: 1px solid #ff8156
+        padding: 0
+        max-width: 300px
+        margin: 0
+        width: 100%
+
+    &-inner
+        min-height: 300px
+        &__menu-subtitle
+            span
+                color: red
+        h4
+            font-family: HelveticaNeueCyr-Light,Arial,sans-serif
+            display: flex
+            flex-direction: row
+            align-items: center
+            margin: 3px 0 30px
+            line-height: 1.2
+            font-weight: 300
+            font-size: 24px
+            span
+                background: #ff8156
+                color: #fff
+                font-size: 16px
+                font-family: HelveticaNeueCyr-Light,Arial,sans-serif
+                line-height: 16px
+                padding: 9px 13px 6px
+                margin: 0 15px 0 0
+
+        &__menu-wrapper select
+            padding: 3px 15px 0
+            color: #000
+            font-size: 16px
+            font-family: HelveticaNeueCyr-Light,Arial,sans-serif
+            line-height: 16px
+            padding: 15px
+
+        &__contact-wrapper
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+
+        .wpcf7-form-control-wrap
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+
+        &__menu-subtitle
+            font-size: 14px
+            font-family: HelveticaNeueCyr-Light,Arial,sans-serif
+            line-height: 14px
+            margin-bottom: 5px
+            display: block
+
+    .cf7mls_next.action-button img
+        width: 14px
+    &__manager-wrapper
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    &__radio, &-inner__menu-wrapper
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 30px
+        justify-content: space-between
+        margin: 50px 0
+
+    &__radio .wpcf7-list-item label
+        padding: 16px 20px 14px
+        width: 100%
+        height: 100%
+        position: relative
+        display: block
+
+    &__radio .wpcf7-list-item-label::before
+        content: ""
+        position: absolute
+        top: calc(50% - 9px)
+        left: 16px
+        width: 18px
+        height: 18px
+        border-radius: 50%
+        background: #fff
+        border: 1px solid #ebebeb
+        border-top-color: rgb(235, 235, 235)
+        border-right-color: rgb(235, 235, 235)
+        border-bottom-color: rgb(235, 235, 235)
+        border-left-color: rgb(235, 235, 235)
+        transition: .2s
+
+    &__radio .wpcf7-list-item-label::after
+        content: ""
+        position: absolute
+        top: calc(50% - 3px)
+        left: 22px
+        width: 6px
+        height: 6px
+        border-radius: 50%
+        background: #ff8156
+        transition: .2s
+        opacity: 0
+
+        & input:checked + .wpcf7-list-item-label::after
+            opacity: 1
+
+    &__radio .wpcf7-list-item .wpcf7-list-item-label
+        margin: 0 0 0 10px
+        font-family: HelveticaNeueCyr-Light,Arial,sans-serif
+        font-weight: 100
+        font-size: 16px
+        line-height: 16px
+
+    &__manager-wrapper
+        max-width: 230px
+        width: 100%
+        img
+            object-fit: contain
+            height: auto
+
+    &__manager-wrapper h4
+        margin: 20px auto 10px
+        font-size: 20px
+        text-align: center
+        color: #ff8156
+        font-weight: 600
+
+    &__manager-wrapper p
+        margin: 0 auto 20px auto
+        font-size: 14px
+        text-align: center
+        max-width: 150px
+        width: 100%
+
+    &__manager-wrapper span
+        position: absolute
+        top: 5px
+        right: 5px
+        background: #ff8156
+        color: #fff
+        font-size: 12px
+        line-height: 12px
+        padding: 6px 10px 4px 10px
+        font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+        font-weight: 600
+        letter-spacing: 1px
+    & .fieldset-cf7mls input[type="radio"], & .fieldset-cf7mls input[type="checkbox"]
+        opacity: 0
+    &__radio .wpcf7-list-item label input:checked + .wpcf7-list-item-label::after
+        opacity: 1
+    .contact_form_bottom_item:first-child
+        gap: 0
+
+.cf7mls_back.action-button
+    background-color: transparent
+    border: 1px solid #ff8156
+    border-radius: 0
+    color: #23282d
+    margin: 0
+    padding: 13px 7px
+    min-width: 118px
+    min-height: 38px
+    font-family: HelveticaNeueCyr-Light,Arial,sans-serif
+    font-weight: 100
+    &:hover
+        background-color: #ff8156
+        color: #fff
+
+.footer-filter__title
+    color: #ffffff
+
+.contact_form_bottom_item
+    &_subtitle
+        width: 100%
+        font-size: 14px
+        font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+        line-height: 14px
+        margin-bottom: 5px
+        width: 100%
+    .wpcf7-form-control-wrap
+        width: 100%
+    &_personal
+        font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+        font-weight: 500
+        font-size: 11px
+        color: #303030
+        max-width: 290px
+        margin-bottom: 25px
+        a
+            color: #ff8156
+            text-decoration: underline
+    .wpcf7-form-control.wpcf7-submit
+        padding: 13px 29px
+        font-weight: bold
+        margin: 16px 0px 26px
+        float: right
+        min-height: 50px
+fieldset
+    padding: 0
+
+.galery_single_sliders
+    position: relative
+    .swiper-pagination
+        bottom: -50px
+        .swiper-pagination-bullet-active
+            background: #ff8156
+    .swiper-button-next:after, .swiper-button-prev:after
+        color: #ff8156
+    .swiper-slide
+        height: 500px
+
+.wpcf7-spinner
+    display: none
+
+.how_do_i_become_a_dealer
+    .first_screen
+        .how_do_i_become_a_dealer_text
+            p
+                line-height: 30px
+    &_our_offer
+        &_items
+            padding: 60px 100px 70px
+            +flex(space-between, flex-start, 25px)
+            flex-wrap: wrap
+            color: #fff
+            margin: 0 auto
+            &_btn
+                margin: 0 auto
+                margin-top: 50px
+        &_item
+            width: 45%
+            &.how_do_i_become_a_dealer_our_offer_title
+                font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+                font-size: 35px
+                line-height: 48px
+                color: #fff
+                strong
+                    font-family: HelveticaNeueCyr-Bold, Arial, sans-serif
+                    font-weight: 700
+            &.how_do_i_become_a_dealer_our_offer_desc
+                font-family: HelveticaNeueCyr-Light, Arial, sans-serif
+                font-weight: 300
+                font-size: 18px
+                line-height: 27px
+                color: #fff
+                margin-top: 5px
+    .partner_standard
+        &_items
+            +flex(space-around, flex-start, 25px)
+            flex-wrap: wrap
+        &_item
+            width: 25%
+            &_img
+                max-width: 80px
+                margin: 0 auto
+            &_title
+                font-family: HelveticaNeueCyr-Bold, Arial, sans-serif
+                font-weight: 700
+                font-size: 16px
+                line-height: 24px
+                text-align: center
+                margin-bottom: 19px
+                margin: 25px 0 20px
+            &_desc
+                text-align: center
+                p
+                    line-height: 24px
+    &_info
+        padding: 112px 15px
+        color: #fff
+        font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+        font-weight: 100
+        font-size: 35px
+        text-align: center
+        p
+            max-width: 996px
+            margin: 0 auto
+
+.faq
+    &_inner
+        .container
+            max-width: 900px
+
+.history_one_home_inner
+    .first_screen
+        box-shadow: 0 0 0 500px rgba(0, 0, 0, 0.43) inset
+        padding-top: 290px
+        h1
+            text-align: center
+        .container
+            display: block
+        .history_house_detail_itog
+            &_slider
+                padding-top: 25px
+                border-top: 1px solid hsla(0,0%,100%,.4)
+            &_slider_wrapper
+                gap: 25px
+                justify-content: space-between
+                .swiper-slide
+                    max-width: 175px
+
+            &_slide_content
+                &_top
+                    +flex(center, flex-end, 5px)
+                    text-align: center
+                    font-family: HelveticaNeueCyr-Regular, Arial, sans-serif
+                    font-size: 35px
+                    line-height: 35px
+                    height: 40px
+                    span
+                        font-size: 16px
+                        line-height: 1.2
+                        sup
+                            top: -.5em
+                            font-size: 10px
+
+                    img
+                        max-width: 25px
+                        margin: 0 auto
+                        object-fit: contain
+
+                &_text
+                    margin-top: 15px
+                    font-size: 12px
+                    line-height: 24px
+                    text-transform: uppercase
+
+    &_detail_3d
+        h2
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-weight: 100
+            font-size: 35px
+            color: #000
+            text-align: center
+        &_text
+            margin-top: 50px
+            line-height: 30px
+
+@media (max-width: 1280px)
+    .history_one_home_inner
+        .first_screen
+            .history_house_detail_itog
+                &_slider
+                    padding-top: 25px
+                    border-top: 1px solid hsla(0,0%,100%,.4)
+                &_slider_wrapper
+                    gap: 0
+                    justify-content: normal
+                    .swiper-slide
+                        max-width: 100%
+
+.history_house_detail_plaining
+    background: #f6f6f6
+    &_items
+        +flex(flex-start, center, 0)
+    &_item
+        width: 33%
+        padding: 0 15px
+        position: relative
+        h2
+            font-family: HelveticaNeueCyr-Thin, Arial, sans-serif
+            font-size: 45px
+            line-height: 1.2
+            font-style: normal
+            font-weight: 100
+            text-transform: none
+        &_text
+            font-size: 16px
+            line-height: 24px
+            margin-top: 25px
+            margin-bottom: 16px
+        &_elements
+            +flex(space-between, center, 0)
+            border-top: 1px solid #fff
+            border-bottom: 1px solid #fff
+        &_element
+            width: 50%
+            text-align: center
+            position: relative
+            margin: 20px 0
+            &:before
+                content: ""
+                position: absolute
+                width: 1px
+                height: 83%
+                background: #fff
+                right: 0
+                top: 0
+            &:last-child:before
+                opacity: 0
+
+            &_title
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-size: 12px
+                line-height: 1.2
+                text-transform: uppercase
+                margin-bottom: 12px
+            &_number
+                font-size: 35px
+                line-height: 35px
+                span
+                    font-size: 16px
+                    sup
+                        top: -.5em
+                        font-size: 10px
+
+        .plaining_figure
+            max-width: 324px
+            margin: 0 auto
+            .plaining_figcaption
+                text-align: center
+                font-family: HelveticaNeueCyr-Medium, Arial, sans-serif
+                font-weight: 500
+                &_name
+                    font-size: 16px
+                    line-height: 18px
+                    color: #000
+                    margin-bottom: 2px
+                &_click
+                    font-size: 10px
+                    line-height: 18px
+                    color: #ff7951
+                    text-transform: uppercase
+                    letter-spacing: 2px
+.hidden
+    display: none
